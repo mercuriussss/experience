@@ -1,0 +1,36 @@
+#include<stdio.h>
+void sort(int *a, int left, int right)
+{
+    if(left>=right)
+        return ;
+    int i=left;
+    int j=right;
+    int key=a[left];
+    while(i<j)
+    {
+        while(i<j&&key<=a[j])
+        j--;
+        a[i]=a[j];
+        while(i<j&&key>=a[i])
+        i++;
+        a[j]=a[i];
+    }
+    a[i]=key;
+    sort(a,left,i-1);
+    sort(a,i+1,right);
+}
+int main()
+{
+    int i,n;
+    printf("How many numbers do you want to enter:\n");
+    scanf("%d",&n);
+    int b[n];
+    printf("Please enter %d numbers:\n",n);
+    for(i=0;i<n;i++)
+        scanf("%d",&b[i]);
+    sort(b,0,n);
+    printf("Here are the sorted numbers:\n");
+    for(i=0;i<n;i++)
+        printf("%d ",b[i]);
+    return 0;
+}
