@@ -104,7 +104,7 @@ struct student *Del(struct student *head, int num)
 {
 	struct student *p1;     //p1保存当前需要检查的节点的地址  
 	struct student *p2;     //p2保存当前检查过的节点的地址  
-	if (head == NULL)       //是空链表（结合图3理解）  
+	if (head == NULL)       //是空链表
 	{
 		printf("\nList is null!\n");
 		return head;
@@ -118,7 +118,7 @@ struct student *Del(struct student *head, int num)
 		p1 = p1->next;       //后移一个节点  
 	}
 
-	if (p1->num == num)     //找到了。（结合图4、5理解）  
+	if (p1->num == num)     //找到了。 
 	{
 		if (p1 == head)     //如果要删除的节点是第一个节点  
 		{
@@ -167,7 +167,7 @@ int DestroyList(struct student *head)
 struct student *Insert(struct student *head, int num, struct student *node)
 {
 	struct student *p1;     //p1保存当前需要检查的节点的地址  
-	if (head == NULL)       //（结合图示7理解）  
+	if (head == NULL)       
 	{
 		head = node;
 		node->next = NULL;
@@ -181,7 +181,7 @@ struct student *Insert(struct student *head, int num, struct student *node)
 		p1 = p1->next;       //后移一个节点  
 	}
 
-	if (p1->num == num)        //找到了（结合图示8理解）  
+	if (p1->num == num)        //找到了 
 	{
 		node->next = p1->next;    //显然node的下一节点是原p1的next  
 		p1->next = node;     //插入后，原p1的下一节点就是要插入的node  
@@ -237,7 +237,7 @@ struct student *BubbleSort(struct student *head)
 	p1->next = head;        //注意理解：我们增加一个节点，放在第一个节点的前面，主要是为了便于比较。因为第一个节点没有前驱，我们不能交换地址  
 	head = p1;                 //让head指向p1节点，排序完成后，我们再把p1节点释放掉  
 
-	for (endpt = NULL; endpt != head; endpt = p)    //结合第6点理解  
+	for (endpt = NULL; endpt != head; endpt = p)   
 	{
 		for (p = p1 = head; p1->next->next != endpt; p1 = p1->next)
 		{
